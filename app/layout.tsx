@@ -30,7 +30,7 @@ export default function RootLayout({
 			>
 				<Navbar />
 				<main
-					className="border mt-4 p-5 rounded-md
+					className="border mt-4 p-5 rounded-md shadow-lg
         "
 				>
 					{children}
