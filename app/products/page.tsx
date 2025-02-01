@@ -4,7 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import { SkeletonCard } from "@/components/SkeletonCard";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 
 type ProductProps = {
 	id: number;
@@ -19,7 +19,7 @@ type ProductProps = {
 	};
 };
 
-export default function ProductPage() {
+function ProductPageContent() {
 	const filterType = useSearchParams().get("category");
 	const [products, setProducts] = React.useState<ProductProps[]>([]);
 
@@ -63,7 +63,7 @@ export default function ProductPage() {
 						key={category}
 						className={`${
 							filterType == category ? "bg-gray-300" : ""
-						} p-1 px-2 hover:bg-gray-300 rounded-md  border`}
+						} p-1 px-2 hover:bg-gray-300 rounded-md border`}
 						href={`?category=${category}`}
 					>
 						{capatilize(category)}
@@ -89,5 +89,13 @@ export default function ProductPage() {
 					: [...Array(10)].map((_, i) => <SkeletonCard key={i} />)}
 			</div>
 		</div>
+	);
+}
+
+export default function ProductPage() {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<ProductPageContent />
+		</Suspense>
 	);
 }
