@@ -75,7 +75,9 @@ export default function ProductCard({
 						<p className="text-sm text-gray-600 mb-4 line-clamp-2">
 							{description}
 						</p>
-						<Button className="w-full mt-auto">Add to Cart</Button>
+						<Button className="w-full mt-auto dark:bg-slate-900 dark:text-white">
+							Add to Cart
+						</Button>
 					</div>
 				</div>
 			</motion.div>

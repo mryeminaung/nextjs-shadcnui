@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./ModeToggle";
 
 export default function Navbar() {
 	const path = usePathname();
@@ -16,18 +17,25 @@ export default function Navbar() {
 	];
 
 	return (
-		<div className="gap-3 flex flex-wrap sticky p-1 rounded-md top-0 z-50 bg-gray-200">
-			{NavMenus.map((menu) => (
-				<Link
-					key={menu.label}
-					className={`p-2 hover:bg-slate-100 rounded-md  border ${
-						path == menu.href ? "bg-slate-100" : ""
-					}`}
-					href={menu.href}
-				>
-					{menu.label}
-				</Link>
-			))}
-		</div>
+		<nav className="gap-3 mt-3 mx-3 dark:text-black  sticky p-3 rounded-full top-0 z-50 bg-gray-200 flex items-center justify-between">
+			<div className="flex flex-wrap gap-3 items-center">
+				{NavMenus.map((menu) => (
+					<Link
+						key={menu.label}
+						className={`p-2 hover:bg-slate-100 dark:hover:bg-slate-900 text-black dark:hover:text-white  rounded-md   ${
+							path == menu.href
+								? "bg-slate-100 dark:bg-slate-900 dark:text-white"
+								: ""
+						}`}
+						href={menu.href}
+					>
+						{menu.label}
+					</Link>
+				))}
+			</div>
+			<div>
+				<ModeToggle />
+			</div>
+		</nav>
 	);
 }

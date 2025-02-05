@@ -62,8 +62,10 @@ function ProductPageContent() {
 					<Link
 						key={category}
 						className={`${
-							filterType == category ? "bg-gray-300" : ""
-						} p-1 px-2 hover:bg-gray-300 rounded-md border`}
+							filterType == category
+								? "bg-gray-300 dark:text-slate-900"
+								: ""
+						} p-1 px-2 hover:bg-gray-300 dark:hover:text-slate-900 dark:text-white rounded-md border`}
 						href={`?category=${category}`}
 					>
 						{capatilize(category)}
