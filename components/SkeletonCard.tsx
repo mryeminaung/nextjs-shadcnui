@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 export function SkeletonCard() {
 	return (
 		<motion.div>
-			<div className="bg-white rounded-lg shadow-md overflow-hidden w-full max-w-sm mx-auto flex flex-col">
+			<div className="bg-gray-100 dark:bg-slate-800 rounded-lg shadow-md overflow-hidden w-full max-w-sm mx-auto flex flex-col">
 				<div className="relative aspect-square overflow-hidden flex-shrink-0">
 					<Skeleton className="w-full h-full" />
 				</div>

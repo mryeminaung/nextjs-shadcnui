@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import GoTop from "@/components/GoTop";
+import SiteFooter from "@/components/SiteFooter";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -39,10 +40,11 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<div className="container mx-auto mb-10">
+					<div className="container mx-auto flex flex-col min-h-screen">
 						<Navbar />
-						<main className="mx-5 mt-3">{children}</main>
+						<main className="flex-grow py-10 mx-5">{children}</main>
 						<GoTop />
+						<SiteFooter />
 					</div>
 				</ThemeProvider>
 			</body>

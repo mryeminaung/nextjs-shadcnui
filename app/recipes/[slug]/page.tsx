@@ -3,6 +3,12 @@ import Link from "next/link";
 import Markdown from "react-markdown";
 import { getRecipeDetail } from "@/lib/getRecipeDetailMetadata";
 import { ArrowLeft } from "lucide-react";
+import getRecipeMetadata from "@/lib/getRecipeMetadata";
+
+export async function generateStaticParams() {
+	const recipes = getRecipeMetadata("recipes");
+	return recipes.map((recipe) => ({ params: { slug: recipe.slug } }));
+}
 
 type RecipeDetailProps = {
 	params: Promise<{ slug: string }>;

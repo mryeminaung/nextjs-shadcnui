@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
 import MobileSideNav from "./MobileSideNav";
+import NextSvg from "/public/next.svg";
+import Image from "next/image";
 
 export default function Navbar() {
 	const path = usePathname();
@@ -19,8 +21,19 @@ export default function Navbar() {
 	];
 
 	return (
-		<nav className="bg-white shadow-md gap-3 mt-3 mx-3 dark:bg-slate-900 dark:text-black  sticky p-3 rounded-full top-0 z-50 border-gray-200 dark:border-slate-500 border-b flex items-center justify-between">
-			<div className="hidden md:flex flex-wrap gap-3 items-center">
+		<nav className="bg-white shadow-md gap-3 mt-3 mx-3 dark:bg-slate-900 dark:text-black  sticky p-3 rounded-full px-5 lg:px-10 top-0 z-50 border-gray-200 dark:border-slate-500 border-b-2 flex items-center justify-between">
+			<div className="hidden lg:block max-w-fit">
+				<Link href={"/"}>
+					<Image
+						src={NextSvg}
+						alt="Next.Js"
+						width={128}
+						height={128}
+						className="dark:invert"
+					/>
+				</Link>
+			</div>
+			<div className="hidden md:flex flex-wrap gap-x-1.5 items-center">
 				{NavMenus.map((menu) => (
 					<Link
 						key={menu.label}
@@ -35,8 +48,17 @@ export default function Navbar() {
 					</Link>
 				))}
 			</div>
-			<div className="block md:hidden">
+			<div className="flex items-center gap-x-2 md:hidden order-first">
 				<MobileSideNav />
+				<Link href={"/"}>
+					<Image
+						src={NextSvg}
+						alt="Next.Js"
+						width={128}
+						height={128}
+						className="dark:invert"
+					/>
+				</Link>
 			</div>
 			<div>
 				<ModeToggle />
