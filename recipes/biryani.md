@@ -12,26 +12,26 @@ description: "A fragrant and flavorful Indian rice dish with spices, herbs, and 
 
 ### Rice
 
-- 2 cups (400g) basmati rice
-- 4 cups (960ml) water
-- 1 teaspoon salt
+-   2 cups (400g) basmati rice
+-   4 cups (960ml) water
+-   1 teaspoon salt
 
 ### Chicken Marinade
 
-- 500g chicken, cut into pieces
-- 1 cup (240g) yogurt
-- 1 tablespoon ginger-garlic paste
-- 2 teaspoons biryani masala
-- 1/2 teaspoon turmeric powder
-- Salt to taste
+-   500g chicken, cut into pieces
+-   1 cup (240g) yogurt
+-   1 tablespoon ginger-garlic paste
+-   2 teaspoons biryani masala
+-   1/2 teaspoon turmeric powder
+-   Salt to taste
 
 ### Biryani
 
-- 2 tablespoons ghee
-- 2 onions, thinly sliced
-- 2 tomatoes, chopped
-- 1/2 cup (120ml) milk, infused with a pinch of saffron
-- Fresh coriander and mint leaves
+-   2 tablespoons ghee
+-   2 onions, thinly sliced
+-   2 tomatoes, chopped
+-   1/2 cup (120ml) milk, infused with a pinch of saffron
+-   Fresh coriander and mint leaves
 
 ## Instructions
 

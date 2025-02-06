@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "./ModeToggle";
+import MobileSideNav from "./MobileSideNav";
 
 export default function Navbar() {
 	const path = usePathname();
@@ -18,14 +19,14 @@ export default function Navbar() {
 	];
 
 	return (
-		<nav className="gap-3 mt-3 mx-3 dark:text-black  sticky p-3 rounded-full top-0 z-50 bg-gray-200 flex items-center justify-between">
-			<div className="flex flex-wrap gap-3 items-center">
+		<nav className="bg-white shadow-md gap-3 mt-3 mx-3 dark:bg-slate-900 dark:text-black  sticky p-3 rounded-full top-0 z-50 border-gray-200 dark:border-slate-500 border-b flex items-center justify-between">
+			<div className="hidden md:flex flex-wrap gap-3 items-center">
 				{NavMenus.map((menu) => (
 					<Link
 						key={menu.label}
-						className={`p-2 hover:bg-slate-100 dark:hover:bg-slate-900 text-black dark:hover:text-white  rounded-md   ${
+						className={`px-4 py-2 border-b hover:bg-slate-300 dark:hover:bg-slate-600 text-black dark:text-white dark:hover:text-white  rounded-full  ${
 							path == menu.href
-								? "bg-slate-100 dark:bg-slate-900 dark:text-white"
+								? "bg-gray-300 dark:bg-slate-600 dark:text-white"
 								: ""
 						}`}
 						href={menu.href}
@@ -33,6 +34,9 @@ export default function Navbar() {
 						{menu.label}
 					</Link>
 				))}
+			</div>
+			<div className="block md:hidden">
+				<MobileSideNav />
 			</div>
 			<div>
 				<ModeToggle />
