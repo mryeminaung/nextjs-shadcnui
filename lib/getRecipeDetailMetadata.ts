@@ -9,7 +9,7 @@ export const getRecipeDetail = (slug: string) => {
 	if (!fs.existsSync(file)) {
 		notFound();
 	}
-
+	
 	const recipe_markdown = fs.readFileSync(file, "utf8");
 	const matterResult = matter(recipe_markdown);
 

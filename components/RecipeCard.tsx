@@ -21,8 +21,8 @@ export default function RecipeCard({
 	created_at,
 	description,
 	slug,
-	modified_title,
-}: RecipeCardProps) {
+}: // modified_title,
+RecipeCardProps) {
 	return (
 		<CardWrapper>
 			<h2 className="text-xl font-semibold mb-3">{title}</h2>
